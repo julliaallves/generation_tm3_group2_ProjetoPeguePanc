@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homepage">
+
+    <fragment
+        android:id="@+id/homepage"
+        android:name="com.generation.projetopanc.homepage"
+        android:label="fragment_homepage"
+        tools:layout="@layout/fragment_homepage" />
+    <fragment
+        android:id="@+id/catalogo"
+        android:name="com.generation.projetopanc.CatalogoFragment"
+        android:label="fragment_catalogo"
+        tools:layout="@layout/fragment_catalogo" />
+    <fragment
+        android:id="@+id/novoProduto"
+        android:name="com.generation.projetopanc.NovoProdutoFragment"
+        android:label="fragment_novo_produto"
+        tools:layout="@layout/fragment_novo_produto" />
+    <fragment
+        android:id="@+id/carrinho"
+        android:name="com.generation.projetopanc.carrinho"
+        android:label="fragment_carrinho"
+        tools:layout="@layout/fragment_carrinho" />
+    <fragment
+        android:id="@+id/perfil"
+        android:name="com.generation.projetopanc.perfil"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+</navigation>
