@@ -8,35 +8,28 @@
     tools:context=".homepage"
     android:background="#F0E4D1">
 
-    <TextView
-        android:id="@+id/homepage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="homepage"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/BarraSuperior"
+        android:layout_width="411dp"
+        android:layout_height="65dp"
+        android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/textView"
-        android:layout_width="411dp"
-        android:layout_height="65dp"
-        android:background="#FFFFFF" />
-
-    <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imagePerfil"
         android:layout_width="53dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/BarraSuperior"
         app:srcCompat="@drawable/imagemfoto"
         android:contentDescription="TODO" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textTitulo"
         android:layout_width="152dp"
         android:layout_height="31dp"
         android:layout_marginStart="100dp"
@@ -47,11 +40,11 @@
         android:textColor="#000000"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/BarraSuperior"
+        app:layout_constraintTop_toTopOf="@+id/BarraSuperior" />
 
     <Button
-        android:id="@+id/search"
+        android:id="@+id/Lupa"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
@@ -61,11 +54,11 @@
         app:iconGravity="textTop"
         app:iconPadding="0dp"
         app:iconTint="#CE7D00"
-        app:layout_constraintEnd_toStartOf="@+id/cart"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintEnd_toStartOf="@+id/Carrinho"
+        app:layout_constraintTop_toTopOf="@+id/BarraSuperior" />
 
     <Button
-        android:id="@+id/cart"
+        android:id="@+id/Carrinho"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
@@ -75,6 +68,6 @@
         app:iconGravity="textTop"
         app:iconPadding="0dp"
         app:iconTint="#CE7D00"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintEnd_toEndOf="@+id/BarraSuperior"
+        app:layout_constraintTop_toTopOf="@+id/BarraSuperior" />
 </androidx.constraintlayout.widget.ConstraintLayout>

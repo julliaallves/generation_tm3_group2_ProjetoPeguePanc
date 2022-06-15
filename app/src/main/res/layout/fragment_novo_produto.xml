@@ -8,34 +8,37 @@
     tools:context=".NovoProdutoFragment">
 
     <Button
-        android:id="@+id/buttonSalvar"
+        android:id="@+id/buttonCadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Cadastrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <ImageView
-        android:id="@+id/textView"
+        android:id="@+id/BarraSuperior"
         android:layout_width="411dp"
         android:layout_height="65dp"
-        android:background="#FFFFFF" />
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imagePerfil"
         android:layout_width="53dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/BarraSuperior"
         app:srcCompat="@drawable/imagemfoto"
         android:contentDescription="TODO" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textTitulo"
         android:layout_width="152dp"
         android:layout_height="31dp"
         android:layout_marginStart="100dp"
@@ -46,11 +49,11 @@
         android:textColor="#000000"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/BarraSuperior"
+        app:layout_constraintTop_toTopOf="@+id/BarraSuperior" />
 
     <Button
-        android:id="@+id/search"
+        android:id="@+id/Lupa"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
@@ -60,11 +63,12 @@
         app:iconGravity="textTop"
         app:iconPadding="0dp"
         app:iconTint="#CE7D00"
-        app:layout_constraintEnd_toStartOf="@+id/cart"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintEnd_toStartOf="@+id/Carrinho"
+        app:layout_constraintTop_toTopOf="@+id/BarraSuperior"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/cart"
+        android:id="@+id/Carrinho"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
@@ -74,11 +78,12 @@
         app:iconGravity="textTop"
         app:iconPadding="0dp"
         app:iconTint="#CE7D00"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintEnd_toEndOf="@+id/BarraSuperior"
+        app:layout_constraintTop_toTopOf="@+id/BarraSuperior"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textNovoProduto"
         android:layout_width="227dp"
         android:layout_height="49dp"
         android:layout_marginTop="12dp"
@@ -89,34 +94,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.086"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/BarraSuperior" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imageFundo"
         android:layout_width="183dp"
         android:layout_height="120dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textNovoProduto"
         app:srcCompat="@drawable/fundoimagem" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageInserir"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintBottom_toBottomOf="@+id/imageFundo"
+        app:layout_constraintEnd_toEndOf="@+id/imageFundo"
+        app:layout_constraintStart_toStartOf="@+id/imageFundo"
+        app:layout_constraintTop_toTopOf="@+id/imageFundo"
         app:srcCompat="@drawable/imagem" />
 
     <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
+        android:id="@+id/Group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="imageView5,imageView7" />
+        app:constraint_referenced_ids="imageInserir,imageFundo" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -129,28 +134,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7">
+        app:layout_constraintTop_toBottomOf="@+id/imageFundo">
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/editTextNomeProd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:minHeight="60dp"
-            android:text="Trevo" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="R$"
+            android:hint="ex: Trevo"
             android:inputType="textPersonName"
             android:minHeight="60dp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/editTextValorProd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="R$0.00"
+            android:inputType="textPersonName"
+            android:minHeight="60dp" />
+
+        <EditText
+            android:id="@+id/editTextDescricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -159,7 +164,7 @@
             android:minHeight="60dp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName5"
+            android:id="@+id/editTextQuantidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -168,7 +173,7 @@
             android:minHeight="60dp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName6"
+            android:id="@+id/editTextCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
