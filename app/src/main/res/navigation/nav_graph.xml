@@ -19,7 +19,11 @@
         android:id="@+id/novoProduto"
         android:name="com.generation.projetopanc.NovoProdutoFragment"
         android:label="fragment_novo_produto"
-        tools:layout="@layout/fragment_novo_produto" />
+        tools:layout="@layout/fragment_novo_produto" >
+        <action
+            android:id="@+id/action_novoProduto_to_catalogo"
+            app:destination="@id/catalogo" />
+    </fragment>
     <fragment
         android:id="@+id/carrinho"
         android:name="com.generation.projetopanc.carrinho"
