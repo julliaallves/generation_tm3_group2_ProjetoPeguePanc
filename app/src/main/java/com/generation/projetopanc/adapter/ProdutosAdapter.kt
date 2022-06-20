@@ -24,9 +24,9 @@ class ProdutosAdapter : RecyclerView.Adapter<ProdutosAdapter.ProdutosViewHolder>
         holder.binding.textNome.text = produtos.nomeMarca
         holder.binding.textDescricao.text = produtos.descricao
         holder.binding.textImagem.text = produtos.imagem
-        holder.binding.textquantidade.text = produtos.quantidade.toString()
+        holder.binding.textquantidade.text = produtos.quantidade
         holder.binding.textValor.text = produtos.valor
-        //holder.binding.textCategoria.text = produtos.categoria.descricao
+        holder.binding.textCategoria.text = produtos.categoria.descricao
     }
 
     override fun getItemCount(): Int {

@@ -98,9 +98,12 @@ class NovoProdutoFragment : Fragment() {
             val produto = Produtos(0,nome, descricao, imagem, quantidade, valor, categoria)
 
             mainViewModel.addProdutos(produto)
+            //binding.buttonCadastrar.setOnClickListener
+
 
             Toast.makeText(context, "PRODUTO CADASTRADO", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_novoProduto_to_catalogo)
+            findNavController().navigate(R.id.action_novoProduto_to_homepage)
+
 
         } else {
             Toast.makeText(context, "Por favor, revise os campos indicados.", Toast.LENGTH_SHORT)

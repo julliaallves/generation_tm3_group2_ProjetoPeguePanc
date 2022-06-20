@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="R$0.00"
-            android:inputType="textPersonName"
+            android:inputType="numberDecimal"
             android:minHeight="60dp" />
 
         <EditText
@@ -104,7 +104,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Quantidade"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:minHeight="60dp" />
 
         <Spinner

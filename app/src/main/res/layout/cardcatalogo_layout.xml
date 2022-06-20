@@ -65,5 +65,15 @@
             android:textStyle="bold"
             tools:text="Quantidade:" />
 
+        <TextView
+            android:id="@+id/textCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Categoria:" />
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>
