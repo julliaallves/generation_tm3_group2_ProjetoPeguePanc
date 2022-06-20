@@ -20,13 +20,14 @@ class NovoProdutoFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentNovoProdutoBinding.inflate(layoutInflater, container, false)
 
-        return binding.root
-
-        binding.buttonCadastrar.setOnClickListener{
+        binding.buttonCadastrar.setOnClickListener {
             inserirNoBanco()
         }
+        return binding.root
+
 
     }
+
 
     private fun validarCampos(
         nome: String,
@@ -38,14 +39,14 @@ class NovoProdutoFragment : Fragment() {
 
         return !(
                 (nome == "" || nome.length < 3 || nome.length > 40) ||
-                (imagem == "") ||
-                (valor == "") ||
-                (descricao == "" || nome.length < 5 || nome.length > 240) ||
-                (quantidade == "")
+                        (imagem == "") ||
+                        (valor == "") ||
+                        (descricao == "" || nome.length < 5 || nome.length > 240) ||
+                        (quantidade == "")
                 )
     }
 
-    private fun inserirNoBanco(){
+    private fun inserirNoBanco() {
         val nome = binding.editTextNomeProd.text.toString()
         val imagem = binding.imageInserir.toString()
         val valor = binding.editTextValorProd.text.toString()
@@ -54,12 +55,13 @@ class NovoProdutoFragment : Fragment() {
 
 
 
-        if(validarCampos(nome, imagem, valor, descricao, quantidade)){
+        if (validarCampos(nome, imagem, valor, descricao, quantidade)) {
             Toast.makeText(context, "PRODUTO CADASTRADO", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_novoProduto_to_catalogo)
 
-        }else{
-            Toast.makeText(context, "Por favor, revise os campos indicados.", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(context, "Por favor, revise os campos indicados.", Toast.LENGTH_SHORT)
+                .show()
         }
     }
 }
