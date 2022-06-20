@@ -17,76 +17,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <ImageView
-        android:id="@+id/BarraSuperior"
-        android:layout_width="411dp"
-        android:layout_height="65dp"
-        android:background="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imagePerfil"
-        android:layout_width="53dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/BarraSuperior"
-        app:srcCompat="@drawable/imagemfoto"
-        android:contentDescription="TODO" />
-
-    <TextView
-        android:id="@+id/textTitulo"
-        android:layout_width="152dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/roboto_bold"
-        android:text="Pegue&amp;Panc"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/BarraSuperior"
-        app:layout_constraintTop_toTopOf="@+id/BarraSuperior" />
-
-    <Button
-        android:id="@+id/Lupa"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:backgroundTint="#00FFFFFF"
-        app:icon="@drawable/ic_search"
-        app:iconGravity="textTop"
-        app:iconPadding="0dp"
-        app:iconTint="#CE7D00"
-        app:layout_constraintEnd_toStartOf="@+id/Carrinho"
-        app:layout_constraintTop_toTopOf="@+id/BarraSuperior"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <Button
-        android:id="@+id/Carrinho"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:backgroundTint="#00FFFFFF"
-        app:icon="@drawable/ic_cart"
-        app:iconGravity="textTop"
-        app:iconPadding="0dp"
-        app:iconTint="#CE7D00"
-        app:layout_constraintEnd_toEndOf="@+id/BarraSuperior"
-        app:layout_constraintTop_toTopOf="@+id/BarraSuperior"
-        tools:ignore="SpeakableTextPresentCheck" />
-
     <TextView
         android:id="@+id/textNovoProduto"
         android:layout_width="227dp"
         android:layout_height="49dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:text="Novo Produto"
         android:textColor="#000000"
         android:textSize="35dp"
@@ -94,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.086"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BarraSuperior" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageFundo"
@@ -172,14 +107,12 @@
             android:inputType="textPersonName"
             android:minHeight="60dp" />
 
-        <EditText
-            android:id="@+id/editTextCategoria"
+        <Spinner
+            android:id="@+id/spinnerCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Categoria"
-            android:inputType="textPersonName"
-            android:minHeight="60dp" />
+            android:minHeight="60dp"
+            tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
