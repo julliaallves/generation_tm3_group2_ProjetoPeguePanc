@@ -20,6 +20,4 @@ interface ApiService {
     @GET("produtos")
     suspend fun listProdutos(): retrofit2.Response<List<Produtos>>
 
-
-
 }

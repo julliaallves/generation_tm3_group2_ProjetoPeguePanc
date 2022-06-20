@@ -7,7 +7,9 @@ import com.generation.projetopanc.databinding.CardcatalogoLayoutBinding
 import com.generation.projetopanc.model.Produtos
 
 class ProdutosAdapter : RecyclerView.Adapter<ProdutosAdapter.ProdutosViewHolder> (){
-    var listProdutos = emptyList<Produtos>()
+
+    private var listProdutos = emptyList<Produtos>()
+
     class ProdutosViewHolder (val binding: CardcatalogoLayoutBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProdutosViewHolder {
@@ -18,7 +20,6 @@ class ProdutosAdapter : RecyclerView.Adapter<ProdutosAdapter.ProdutosViewHolder>
 
     override fun onBindViewHolder(holder: ProdutosViewHolder, position: Int) {
         var produtos = listProdutos[position]
-
 
         holder.binding.textNome.text = produtos.nomeMarca
         holder.binding.textDescricao.text = produtos.descricao
@@ -36,8 +37,6 @@ class ProdutosAdapter : RecyclerView.Adapter<ProdutosAdapter.ProdutosViewHolder>
 
         listProdutos = list
         notifyDataSetChanged()
-
-
     }
 
 }

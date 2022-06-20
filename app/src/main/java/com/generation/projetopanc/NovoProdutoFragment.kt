@@ -22,6 +22,10 @@ class NovoProdutoFragment : Fragment() {
 
         return binding.root
 
+        binding.buttonCadastrar.setOnClickListener{
+            inserirNoBanco()
+        }
+
     }
 
     private fun validarCampos(
@@ -34,10 +38,10 @@ class NovoProdutoFragment : Fragment() {
 
         return !(
                 (nome == "" || nome.length < 3 || nome.length > 40) ||
-                        (imagem == "") ||
-                        (valor == "") ||
-                        (descricao == "" || nome.length < 5 || nome.length > 240) ||
-                        (quantidade == "")
+                (imagem == "") ||
+                (valor == "") ||
+                (descricao == "" || nome.length < 5 || nome.length > 240) ||
+                (quantidade == "")
                 )
     }
 
@@ -48,6 +52,8 @@ class NovoProdutoFragment : Fragment() {
         val descricao = binding.editTextDescricao.text.toString()
         val quantidade = binding.editTextQuantidade.text.toString()
 
+
+
         if(validarCampos(nome, imagem, valor, descricao, quantidade)){
             Toast.makeText(context, "PRODUTO CADASTRADO", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_novoProduto_to_catalogo)
@@ -55,6 +61,5 @@ class NovoProdutoFragment : Fragment() {
         }else{
             Toast.makeText(context, "Por favor, revise os campos indicados.", Toast.LENGTH_SHORT).show()
         }
-
     }
 }

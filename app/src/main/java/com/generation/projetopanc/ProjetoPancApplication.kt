@@ -6,5 +6,5 @@ import dagger.hilt.android.HiltAndroidApp
 
 // essa notação diz que o Hilt está habilitado no app
 @HiltAndroidApp
-class TodoApplication : Application(){
+class ProjetoPancApplication : Application(){
 }

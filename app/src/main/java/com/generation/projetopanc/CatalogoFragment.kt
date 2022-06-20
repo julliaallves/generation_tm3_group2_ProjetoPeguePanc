@@ -24,7 +24,7 @@ class CatalogoFragment : Fragment() {
         binding = FragmentCatalogoBinding.inflate(layoutInflater,container,false)
 
 
-        val listProdutos = listOf(
+        /*val listProdutos = listOf(
             Produtos(
                 "https://cdn.progresso.com.br/upload/dn_noticia/2012/06/4fe0763d9343b1ebc9c983ac44a4ecd4ad4360ce4f8c1.jpg",
                 "Muda de Taioba",
@@ -75,13 +75,16 @@ class CatalogoFragment : Fragment() {
                 100
             )
         )
+
+         */
+
         //Configuração do RecyclerView
         val adapter = ProdutosAdapter()
         binding.recyclerTarefa.layoutManager = LinearLayoutManager(context)
         binding.recyclerTarefa.adapter = adapter
         binding.recyclerTarefa.setHasFixedSize(true)
 
-        adapter.setList(listProdutos)
+        //adapter.setList()
 
 
         return binding.root
