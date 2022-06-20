@@ -2,6 +2,9 @@ package com.generation.projetopanc
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.widget.Toast
+import android.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -25,14 +28,13 @@ class MainActivity : AppCompatActivity() {
         setupWithNavController(bottomNavigationView , navController)
 
 
-
-
-
-
-
-
-
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu,menu)
+        return true
+    }
+
 
     private fun replaceFragment(fragment: Fragment){
         if(fragment!=null){
