@@ -34,7 +34,7 @@ class MainViewModel @Inject constructor(
         _myprodutosResponse
 
     init {
-        listCategoria()
+      //listCategoria()
     }
     //corrotina
     fun listCategoria(){
