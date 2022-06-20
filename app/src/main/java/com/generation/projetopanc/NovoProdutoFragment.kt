@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewTreeLifecycleOwner
 import androidx.navigation.fragment.findNavController
 import com.generation.projetopanc.databinding.FragmentNovoProdutoBinding
 import com.generation.projetopanc.model.Categoria
+import com.generation.projetopanc.model.Produtos
 import kotlinx.coroutines.selects.select
 import java.util.*
 
@@ -89,10 +90,15 @@ class NovoProdutoFragment : Fragment() {
         val valor = binding.editTextValorProd.text.toString()
         val descricao = binding.editTextDescricao.text.toString()
         val quantidade = binding.editTextQuantidade.text.toString()
-
+        val categoria = Categoria(categoriaSelecionada, null, null)
 
 
         if (validarCampos(nome, imagem, valor, descricao, quantidade)) {
+
+            val produto = Produtos(0,nome, descricao, imagem, quantidade, valor, categoria)
+
+            mainViewModel.addProdutos(produto)
+
             Toast.makeText(context, "PRODUTO CADASTRADO", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_novoProduto_to_catalogo)
 
@@ -101,4 +107,5 @@ class NovoProdutoFragment : Fragment() {
                 .show()
         }
     }
+
 }

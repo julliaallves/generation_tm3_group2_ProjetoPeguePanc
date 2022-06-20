@@ -22,7 +22,8 @@
         tools:layout="@layout/fragment_novo_produto" >
         <action
             android:id="@+id/action_novoProduto_to_catalogo"
-            app:destination="@id/catalogo" />
+            app:destination="@id/catalogo"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/carrinho"
