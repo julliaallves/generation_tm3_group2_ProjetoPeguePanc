@@ -17,6 +17,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
+
     private  val repository: Repository
 ) : ViewModel() {
 
@@ -32,9 +33,12 @@ class MainViewModel @Inject constructor(
     val myProdutosResponse: LiveData<Response<List<Produtos>>> =
         _myprodutosResponse
 
+    init {
+        listCategoria()
+    }
     //corrotina
     fun listCategoria(){
-        viewModelScope.launch(Dispatchers.IO){
+        viewModelScope.launch{
             try {
 
                 val response = repository.listCategoria()
@@ -46,7 +50,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun addTarefa(produtos: Produtos){
+    fun addProdutos(produtos: Produtos){
         viewModelScope.launch{
             try {
                 repository.addProdutos(produtos)
