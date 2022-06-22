@@ -9,7 +9,12 @@
         android:id="@+id/homepage"
         android:name="com.generation.projetopanc.homepage"
         android:label="fragment_homepage"
-        tools:layout="@layout/fragment_homepage" />
+        tools:layout="@layout/fragment_homepage" >
+        <action
+            android:id="@+id/action_homepage_to_carrinho"
+            app:destination="@id/carrinho"
+            app:popUpToInclusive="false" />
+    </fragment>
     <fragment
         android:id="@+id/catalogo"
         android:name="com.generation.projetopanc.CatalogoFragment"
