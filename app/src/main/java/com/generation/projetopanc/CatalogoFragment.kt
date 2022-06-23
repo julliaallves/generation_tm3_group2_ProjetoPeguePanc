@@ -6,13 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.generation.projetopanc.adapter.ProdutosAdapter
+import com.generation.projetopanc.adapter.ProdutosClickListener
 import com.generation.projetopanc.databinding.FragmentCatalogoBinding
 import com.generation.projetopanc.model.Produtos
 
 
-class CatalogoFragment : Fragment() {
+class CatalogoFragment : Fragment(), ProdutosClickListener {
 
     private lateinit var binding: FragmentCatalogoBinding
     private val mainviewmodel : MainViewModel by activityViewModels()
@@ -29,7 +31,7 @@ class CatalogoFragment : Fragment() {
 
 
         //Configuração do RecyclerView
-        val adapter = ProdutosAdapter()
+        val adapter = ProdutosAdapter(this)
         binding.recyclerProduto.layoutManager = LinearLayoutManager(context)
         binding.recyclerProduto.adapter = adapter
         binding.recyclerProduto.setHasFixedSize(true)
@@ -39,11 +41,13 @@ class CatalogoFragment : Fragment() {
                             adapter.setList(response.body()!!)
             }
         }
-
-
-
         return binding.root
 
+    }
+
+    override fun onProdutosClickListener(produto: Produtos) {
+        mainviewmodel.produtoSelecionado = produto
+        findNavController().navigate(R.id.action_catalogo_to_novoProduto)
     }
 
 }

@@ -5,6 +5,7 @@ import com.generation.projetopanc.model.Produtos
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 
 interface ApiService {
 
@@ -19,5 +20,15 @@ interface ApiService {
 
     @GET("produtos")
     suspend fun listProdutos(): retrofit2.Response<List<Produtos>>
+
+    @PUT("produtos")
+    suspend fun updateProdutos(
+        @Body produtos: Produtos
+    ): retrofit2.Response<Produtos>
+
+
+
+
+
 
 }

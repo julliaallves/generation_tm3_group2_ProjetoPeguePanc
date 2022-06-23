@@ -10,25 +10,27 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewTreeLifecycleOwner
 import androidx.navigation.fragment.findNavController
 import com.generation.projetopanc.databinding.FragmentNovoProdutoBinding
 import com.generation.projetopanc.model.Categoria
 import com.generation.projetopanc.model.Produtos
-import kotlinx.coroutines.selects.select
-import java.util.*
+
 
 class NovoProdutoFragment : Fragment() {
 
     private lateinit var binding: FragmentNovoProdutoBinding
     private val mainViewModel: MainViewModel by activityViewModels()
     private var categoriaSelecionada = 0L
+    private var produtoSelecionado: Produtos? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentNovoProdutoBinding.inflate(layoutInflater, container, false)
+
+        carregarDados()
 
         mainViewModel.listCategoria()
 
@@ -94,20 +96,38 @@ class NovoProdutoFragment : Fragment() {
 
 
         if (validarCampos(nome, imagem, valor, descricao, quantidade)) {
-
-            val produto = Produtos(0,nome, descricao, imagem, quantidade, valor, categoria)
-
-            mainViewModel.addProdutos(produto)
+            val salvar: String
+            if (produtoSelecionado != null){
+                salvar = "Produto Atualizado"
+                val produto = Produtos(produtoSelecionado?.id!!, nome, descricao, imagem, quantidade, valor, categoria)
+                mainViewModel.updateProdutos(produto)
+            }else{
+                salvar = "Produto Cadastrado"
+                val produto = Produtos(0,nome, descricao, imagem, quantidade, valor, categoria)
+                mainViewModel.addProdutos(produto)
+            }
             //binding.buttonCadastrar.setOnClickListener
 
 
-            Toast.makeText(context, "PRODUTO CADASTRADO", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, salvar, Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_novoProduto_to_homepage)
 
 
         } else {
             Toast.makeText(context, "Por favor, revise os campos indicados.", Toast.LENGTH_SHORT)
                 .show()
+        }
+    }
+
+    private fun carregarDados(){
+        produtoSelecionado = mainViewModel.produtoSelecionado
+        if(produtoSelecionado != null){
+            binding.editTextNomeProd.setText(produtoSelecionado?.nomeMarca)
+            binding.editTextDescricao.setText(produtoSelecionado?.descricao)
+            binding.editTextValorProd.setText(produtoSelecionado?.valor)
+            binding.editTextQuantidade.setText(produtoSelecionado?.quantidade)
+            binding.buttonCadastrar.setText("ATUALIZAR")
+            //config de spinner de categorias da api
         }
     }
 

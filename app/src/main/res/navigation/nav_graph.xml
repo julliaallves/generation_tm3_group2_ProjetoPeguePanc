@@ -19,7 +19,13 @@
         android:id="@+id/catalogo"
         android:name="com.generation.projetopanc.CatalogoFragment"
         android:label="fragment_catalogo"
-        tools:layout="@layout/fragment_catalogo" />
+        tools:layout="@layout/fragment_catalogo" >
+        <action
+            android:id="@+id/action_catalogo_to_novoProduto"
+            app:destination="@id/novoProduto"
+            app:popUpTo="@id/novoProduto"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/novoProduto"
         android:name="com.generation.projetopanc.NovoProdutoFragment"

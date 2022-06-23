@@ -3,12 +3,16 @@ package com.generation.projetopanc.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.generation.projetopanc.MainViewModel
 import com.generation.projetopanc.databinding.CardcatalogoLayoutBinding
 import com.generation.projetopanc.model.Produtos
 
-class ProdutosAdapter : RecyclerView.Adapter<ProdutosAdapter.ProdutosViewHolder> (){
+class ProdutosAdapter (
+    val produtosClickListener: ProdutosClickListener
+        ): RecyclerView.Adapter<ProdutosAdapter.ProdutosViewHolder> (){
 
     private var listProdutos = emptyList<Produtos>()
+
 
     class ProdutosViewHolder (val binding: CardcatalogoLayoutBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -27,6 +31,10 @@ class ProdutosAdapter : RecyclerView.Adapter<ProdutosAdapter.ProdutosViewHolder>
         holder.binding.textquantidade.text = produtos.quantidade
         holder.binding.textValor.text = produtos.valor
         holder.binding.textCategoria.text = produtos.categoria.descricao
+
+        holder.itemView.setOnClickListener{
+            produtosClickListener.onProdutosClickListener(produtos)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -35,8 +43,10 @@ class ProdutosAdapter : RecyclerView.Adapter<ProdutosAdapter.ProdutosViewHolder>
 
     fun setList(list: List<Produtos>){
 
-        listProdutos = list
+        listProdutos = list.sortedByDescending { it.id }
         notifyDataSetChanged()
     }
+
+
 
 }
