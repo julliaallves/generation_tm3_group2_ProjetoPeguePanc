@@ -41,6 +41,9 @@ class NovoProdutoFragment : Fragment() {
 
         binding.buttonCadastrar.setOnClickListener {
             inserirNoBanco()
+            produtoSelecionado = null
+            binding.buttonCadastrar.setText("CADASTRAR")
+
         }
         return binding.root
     }
