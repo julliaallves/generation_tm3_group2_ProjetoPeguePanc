@@ -42,8 +42,36 @@ class ProdutosAdapter (
         when(produtos.nomeMarca){
 
             "Taioba" ->{holder.binding.textImagem.setImageResource(R.drawable.taioba)}
+            "Ora-pro-nóbis" ->{holder.binding.textImagem.setImageResource(R.drawable.orapronobis)}
+            "Feijão-espada" ->{holder.binding.textImagem.setImageResource(R.drawable.feijaoespada)}
+            "Alho-silvestre" ->{holder.binding.textImagem.setImageResource(R.drawable.alhosilvestre)}
+            "Feijoa" ->{holder.binding.textImagem.setImageResource(R.drawable.feijoa)}
+            "Mangará" ->{holder.binding.textImagem.setImageResource(R.drawable.mangara)}
+            "Melão-andino" ->{holder.binding.textImagem.setImageResource(R.drawable.melaoandino)}
+            "Peixinho-da-horta" ->{holder.binding.textImagem.setImageResource(R.drawable.peixinhodahorta)}
+            "Mentruz" ->{holder.binding.textImagem.setImageResource(R.drawable.mentruz)}
+            "Arumbeva" ->{holder.binding.textImagem.setImageResource(R.drawable.arumbeva)}
+            //"Begônia" ->{holder.binding.textImagem.setImageResource(R.drawable.begonia)}
+            "Urtigão" ->{holder.binding.textImagem.setImageResource(R.drawable.urtigao)}
+            "Gabiroba" ->{holder.binding.textImagem.setImageResource(R.drawable.gabiroba)}
+            "Semente de Baru" ->{holder.binding.textImagem.setImageResource(R.drawable.sementedebaru)}
+            "Trevo" ->{holder.binding.textImagem.setImageResource(R.drawable.trevo)}
+            "Hibisco" ->{holder.binding.textImagem.setImageResource(R.drawable.hibisco)}
+            "Celósia" ->{holder.binding.textImagem.setImageResource(R.drawable.celosia)}
+            "Trapoeraba" ->{holder.binding.textImagem.setImageResource(R.drawable.trapoeraba)}
+            "Araruta" ->{holder.binding.textImagem.setImageResource(R.drawable.araruta)}
+            "Pequi" ->{holder.binding.textImagem.setImageResource(R.drawable.pequi)}
+            "Jaca Verde" ->{holder.binding.textImagem.setImageResource(R.drawable.jaca)}
+            "Fruta-pão" ->{holder.binding.textImagem.setImageResource(R.drawable.frutapaum)}
 
-            else ->{}
+
+            else ->{holder.binding.textImagem.setImageResource(R.drawable.imagem)}
+        }
+
+        if(produtos.quantidade.toInt() == 1){
+            holder.binding.textqtd2.setText(" disponível)")
+        }else{
+            holder.binding.textqtd2.setText(" disponíveis)")
         }
         //holder.binding.textImagem.setImageResource()
     }

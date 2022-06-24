@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+    android:layout_margin="3dp"
     android:scrollbarSize="0dp"
     app:cardBackgroundColor="@color/white"
     app:cardElevation="10dp">
@@ -69,9 +69,11 @@
             android:id="@+id/textDescricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
             android:textColor="#5F5E5E"
             android:textSize="14sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textRS"
@@ -114,14 +116,13 @@
             android:id="@+id/textCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:textColor="@color/black"
             android:textColorHighlight="@color/black"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textquantidade"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textDescricao"
             tools:text="Categoria:" />
 
         <androidx.constraintlayout.widget.Guideline
