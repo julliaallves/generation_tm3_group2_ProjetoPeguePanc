@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.generation.projetopanc.MainViewModel
+import com.generation.projetopanc.R
 import com.generation.projetopanc.databinding.CardcatalogoLayoutBinding
 import com.generation.projetopanc.model.Produtos
 
@@ -28,7 +29,7 @@ class ProdutosAdapter (
 
         holder.binding.textNome.text = produtos.nomeMarca
         holder.binding.textDescricao.text = produtos.descricao
-        holder.binding.textImagem.text = produtos.imagem
+        //holder.binding.textImagem.text = produtos.imagem
         holder.binding.textquantidade.text = produtos.quantidade
         holder.binding.textValor.text = produtos.valor
         holder.binding.textCategoria.text = produtos.categoria.descricao
@@ -37,6 +38,14 @@ class ProdutosAdapter (
             produtosClickListener.onProdutosClickListener(produtos)
 
         }
+
+        when(produtos.nomeMarca){
+
+            "Taioba" ->{holder.binding.textImagem.setImageResource(R.drawable.taioba)}
+
+            else ->{}
+        }
+        //holder.binding.textImagem.setImageResource()
     }
 
     override fun getItemCount(): Int {

@@ -41,7 +41,6 @@ class NovoProdutoFragment : Fragment() {
 
         binding.buttonCadastrar.setOnClickListener {
             inserirNoBanco()
-            produtoSelecionado = null
             binding.buttonCadastrar.setText("CADASTRAR")
 
         }
@@ -113,6 +112,7 @@ class NovoProdutoFragment : Fragment() {
 
 
             Toast.makeText(context, salvar, Toast.LENGTH_SHORT).show()
+            produtoSelecionado = null
             findNavController().navigate(R.id.action_novoProduto_to_homepage)
 
 
@@ -124,6 +124,7 @@ class NovoProdutoFragment : Fragment() {
 
     private fun carregarDados(){
         produtoSelecionado = mainViewModel.produtoSelecionado
+        binding.buttonCadastrar.setText("CADASTRAR")
         if(produtoSelecionado != null){
             binding.editTextNomeProd.setText(produtoSelecionado?.nomeMarca)
             binding.editTextDescricao.setText(produtoSelecionado?.descricao)

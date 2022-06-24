@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.generation.projetopanc.adapter.ProdutosAdapter
 import com.generation.projetopanc.adapter.ProdutosClickListener
@@ -32,7 +33,7 @@ class CatalogoFragment : Fragment(), ProdutosClickListener {
 
         //Configuração do RecyclerView
         val adapter = ProdutosAdapter(this, mainviewmodel)
-        binding.recyclerProduto.layoutManager = LinearLayoutManager(context)
+        binding.recyclerProduto.layoutManager = GridLayoutManager(context,2)
         binding.recyclerProduto.adapter = adapter
         binding.recyclerProduto.setHasFixedSize(true)
 
