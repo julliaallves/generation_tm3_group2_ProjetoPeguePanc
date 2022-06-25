@@ -51,4 +51,6 @@ class CatalogoFragment : Fragment(), ProdutosClickListener {
         findNavController().navigate(R.id.action_catalogo_to_novoProduto)
     }
 
+
+
 }

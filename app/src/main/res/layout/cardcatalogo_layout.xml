@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="3dp"
+    android:layout_margin="1dp"
     android:scrollbarSize="0dp"
     app:cardBackgroundColor="@color/white"
     app:cardElevation="10dp">
@@ -17,6 +17,34 @@
         android:orientation="vertical"
         android:padding="10dp">
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="75dp"
+            android:layout_height="35dp"
+            android:padding="2dp"
+            android:text="Editar"
+            app:iconSize="18dp"
+            android:textSize="11dp"
+            android:textColor="#5F5E5E"
+            app:icon="@drawable/ic_baseline_settings_24"
+            app:iconTint="#5F5E5E"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:padding="2dp"
+            android:textColor="#5F5E5E"
+            app:icon="@drawable/ic_baseline_delete_24"
+            app:iconSize="20dp"
+            app:iconTint="#5F5E5E"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <ImageView
             android:id="@+id/textImagem"
@@ -26,7 +54,7 @@
             android:scrollbarSize="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editButton"
             app:srcCompat="@drawable/imagemfoto" />
 
         <TextView

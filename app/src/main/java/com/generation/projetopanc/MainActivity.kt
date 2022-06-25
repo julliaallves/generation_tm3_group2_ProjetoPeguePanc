@@ -62,9 +62,6 @@ class MainActivity : AppCompatActivity() {
 
         when(itemview) {
 
-            R.id.app_bar_cart -> {
-                Toast.makeText(applicationContext, "Clicou Carrinho", Toast.LENGTH_SHORT).show()
-            }
             R.id.app_bar_search -> Toast.makeText(applicationContext, "Clicou Busca", Toast.LENGTH_SHORT).show()
             }
         return false

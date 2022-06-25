@@ -7,6 +7,7 @@ import com.generation.projetopanc.MainViewModel
 import com.generation.projetopanc.R
 import com.generation.projetopanc.databinding.CardcatalogoLayoutBinding
 import com.generation.projetopanc.model.Produtos
+import kotlinx.android.synthetic.main.activity_main.*
 
 class ProdutosAdapter (
     val produtosClickListener: ProdutosClickListener,
@@ -34,10 +35,22 @@ class ProdutosAdapter (
         holder.binding.textValor.text = produtos.valor
         holder.binding.textCategoria.text = produtos.categoria.descricao
 
+        /*
+
+        //CÓDIGO ANTIGO - VOU USAR PRA CRIAR A PDP
+
         holder.itemView.setOnClickListener{
             produtosClickListener.onProdutosClickListener(produtos)
 
         }
+
+         */
+
+        holder.binding.editButton.setOnClickListener{
+            produtosClickListener.onProdutosClickListener(produtos)
+        }
+
+
 
         when(produtos.nomeMarca){
 
@@ -70,10 +83,16 @@ class ProdutosAdapter (
 
         if(produtos.quantidade.toInt() == 1){
             holder.binding.textqtd2.setText(" disponível)")
-        }else{
+        }else if(produtos.quantidade.toInt() == 0){
+            holder.binding.textqtd2.setText(" indisponível)")
+            //holder.binding.textqtd2.setTextColor()
             holder.binding.textqtd2.setText(" disponíveis)")
         }
         //holder.binding.textImagem.setImageResource()
+
+
+
+
     }
 
     override fun getItemCount(): Int {
