@@ -113,7 +113,7 @@ class NovoProdutoFragment : Fragment() {
 
             Toast.makeText(context, salvar, Toast.LENGTH_SHORT).show()
             produtoSelecionado = null
-            findNavController().navigate(R.id.action_novoProduto_to_homepage)
+            findNavController().navigate(R.id.action_novoProduto_to_catalogo3)
 
 
         } else {

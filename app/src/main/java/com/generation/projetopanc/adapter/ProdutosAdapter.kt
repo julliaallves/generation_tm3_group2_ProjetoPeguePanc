@@ -7,7 +7,6 @@ import com.generation.projetopanc.MainViewModel
 import com.generation.projetopanc.R
 import com.generation.projetopanc.databinding.CardcatalogoLayoutBinding
 import com.generation.projetopanc.model.Produtos
-import kotlinx.android.synthetic.main.activity_main.*
 
 class ProdutosAdapter (
     val produtosClickListener: ProdutosClickListener,
@@ -88,6 +87,17 @@ class ProdutosAdapter (
             //holder.binding.textqtd2.setTextColor()
             holder.binding.textqtd2.setText(" disponíveis)")
         }
+
+        when(produtos.categoria.descricao){
+
+            "Troca" ->{holder.binding.categoriaIcon.setImageResource(R.drawable.ic_troca)}
+            "Venda" ->{holder.binding.categoriaIcon.setImageResource(R.drawable.ic_venda)}
+            "Doação" ->{holder.binding.categoriaIcon.setImageResource(R.drawable.ic_doacao)}
+
+            else ->{}
+
+        }
+
         //holder.binding.textImagem.setImageResource()
 
 

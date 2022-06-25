@@ -26,9 +26,9 @@
             android:text="Editar"
             app:iconSize="18dp"
             android:textSize="11dp"
-            android:textColor="#5F5E5E"
+            android:textColor="#888585"
             app:icon="@drawable/ic_baseline_settings_24"
-            app:iconTint="#5F5E5E"
+            app:iconTint="#888585"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,10 +38,9 @@
             android:layout_width="25dp"
             android:layout_height="35dp"
             android:padding="2dp"
-            android:textColor="#5F5E5E"
             app:icon="@drawable/ic_baseline_delete_24"
             app:iconSize="20dp"
-            app:iconTint="#5F5E5E"
+            app:iconTint="#888585"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -97,11 +96,11 @@
             android:id="@+id/textDescricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:textColor="#5F5E5E"
+            android:layout_marginBottom="10dp"
+            android:textColor="#888585"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textCategoria"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textRS"
@@ -140,17 +139,27 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        <ImageView
+            android:id="@+id/categoriaIcon"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:layout_marginBottom="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_venda"
+            app:tint="#CE7D00" />
+
         <TextView
             android:id="@+id/textCategoria"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:textColor="@color/black"
+            android:layout_marginBottom="15dp"
+            android:textColor="#CE7D00"
             android:textColorHighlight="@color/black"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/categoriaIcon"
             tools:text="Categoria:" />
 
         <androidx.constraintlayout.widget.Guideline
