@@ -9,7 +9,7 @@
         android:id="@+id/publicacoes"
         android:name="com.generation.projetopanc.PublicacoesFragment"
         android:label="fragment_publicacoes"
-        tools:layout="@layout/fragment_homepage">
+        tools:layout="@layout/fragment_publicacoes">
         <action
             android:id="@+id/action_homepage_to_carrinho"
             app:destination="@id/carrinho"
@@ -25,9 +25,6 @@
             app:destination="@id/novoProduto"
             app:popUpTo="@id/novoProduto"
             app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_catalogo_to_paginaDeDescricaoDoProdutoFragment"
-            app:destination="@id/paginaDeDescricaoDoProdutoFragment" />
     </fragment>
     <fragment
         android:id="@+id/novoProduto"
