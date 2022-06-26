@@ -70,6 +70,7 @@ class PublicacoesFragment : Fragment() {
                 25
             )
         )
+        //meter um when pro id pra usar a imagem (tem na aba de produtos assim) use 1000x1000
 
         val adapter = PublicacoesAdapter()
         binding.recyclerPublicacoes.layoutManager = LinearLayoutManager(context)

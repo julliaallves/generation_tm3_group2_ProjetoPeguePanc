@@ -34,26 +34,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/imagePerfil"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Pessoa quem postou" />
 
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/editButton"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="75dp"
+            android:layout_width="25dp"
             android:layout_height="35dp"
-            android:layout_marginStart="296dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="16dp"
             android:padding="2dp"
-            android:text="Editar"
-            android:textColor="#888585"
-            android:textSize="11dp"
-            app:icon="@drawable/ic_baseline_settings_24"
+            app:icon="@drawable/pontos"
             app:iconSize="18dp"
             app:iconTint="#888585"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/deleteButton"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
@@ -61,7 +62,7 @@
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="25dp"
             android:layout_height="35dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:padding="2dp"
             app:icon="@drawable/ic_baseline_delete_24"
             app:iconSize="20dp"
@@ -76,8 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imagePerfil"
             tools:text="Conteúdo da postagem" />
@@ -96,25 +96,37 @@
             android:id="@+id/textComentarios"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:textColor="#888585"
             android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textCompartilhamento"
-            tools:text="Comentários" />
+            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/imagePost"
+            tools:text="13" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/textComentarios"
+            app:layout_constraintTop_toBottomOf="@+id/imagePost"
+            app:srcCompat="@drawable/comentar" />
 
         <TextView
             android:id="@+id/textCompartilhamento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/black"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:textColor="#888585"
             android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imagePost"
-            tools:text="Compartilhamento" />
+            tools:text="13" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
@@ -122,6 +134,69 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_end="189dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/textCompartilhamento"
+            app:layout_constraintTop_toBottomOf="@+id/imagePost"
+            app:srcCompat="@drawable/share" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/comentarButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="130dp"
+            android:layout_height="45dp"
+            android:text="Comentar"
+            android:textColor="#CE7D00"
+            android:textSize="13sp"
+            app:icon="@drawable/comentar"
+            app:iconTint="#CE7D00"
+            app:layout_constraintStart_toEndOf="@+id/likeButton"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/likeButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="99dp"
+            android:layout_height="45dp"
+            android:text="Curtir"
+            android:textSize="13sp"
+            android:textColor="#CE7D00"
+            app:icon="@drawable/like"
+            app:iconTint="#CE7D00"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:srcCompat="@drawable/like" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/shareButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="170dp"
+            android:layout_height="45dp"
+            android:text="Compartilhar"
+            android:textSize="13sp"
+            android:textColor="#CE7D00"
+            app:icon="@drawable/share"
+            app:iconTint="#CE7D00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.377"
+            app:layout_constraintStart_toEndOf="@+id/comentarButton"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="407dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
