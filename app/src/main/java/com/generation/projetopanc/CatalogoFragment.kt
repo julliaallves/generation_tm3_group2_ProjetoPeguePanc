@@ -65,6 +65,10 @@ class CatalogoFragment : Fragment(), ProdutosClickListener, SearchView.OnQueryTe
         findNavController().navigate(R.id.action_catalogo_to_novoProduto)
     }
 
+    override fun onProdutosCLickListenerOpenPdp() {
+        findNavController().navigate(R.id.action_catalogo_to_paginaDeDescricaoDoProdutoFragment)
+    }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         if (menu != null){
             inflater.inflate(R.menu.toolbar_menu,menu)
@@ -135,7 +139,6 @@ class CatalogoFragment : Fragment(), ProdutosClickListener, SearchView.OnQueryTe
 
         }
     }
-
 
 }
 

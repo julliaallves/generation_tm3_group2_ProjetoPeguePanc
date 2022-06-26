@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="1dp"
     android:scrollbarSize="0dp"
-    app:cardBackgroundColor="@color/white"
+    app:cardBackgroundColor="#F0E4D1"
     app:cardElevation="10dp">
 
 

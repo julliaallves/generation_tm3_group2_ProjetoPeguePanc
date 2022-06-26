@@ -32,16 +32,15 @@ class ProdutosAdapter (
         holder.binding.textValor.text = produtos.valor
         holder.binding.textCategoria.text = produtos.categoria.descricao
 
-        /*
 
         //CÓDIGO ANTIGO - VOU USAR PRA CRIAR A PDP
 
         holder.itemView.setOnClickListener{
-            produtosClickListener.onProdutosClickListener(produtos)
+           //produtosClickListener.onProdutosClickListener(produtos)
+            produtosClickListener.onProdutosCLickListenerOpenPdp()
+       }
 
-        }
 
-         */
 
         holder.binding.editButton.setOnClickListener{
             produtosClickListener.onProdutosClickListener(produtos)
