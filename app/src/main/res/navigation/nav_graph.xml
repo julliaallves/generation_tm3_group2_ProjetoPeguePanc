@@ -25,6 +25,11 @@
             app:destination="@id/novoProduto"
             app:popUpTo="@id/novoProduto"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_catalogo_to_paginaDeDescricaoDoProdutoFragment"
+            app:destination="@id/paginaDeDescricaoDoProdutoFragment"
+            app:popUpTo="@id/paginaDeDescricaoDoProdutoFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/novoProduto"
