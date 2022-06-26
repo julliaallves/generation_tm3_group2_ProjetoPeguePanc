@@ -34,9 +34,10 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         setupWithNavController(bottomNavigationView , navController)
 
-        setSupportActionBar(toolbar)
-
     }
+/*
+
+//Método de implementação de Menu - Toolbar para Activity
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu,menu)
@@ -58,16 +59,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        var itemview = item.itemId
+        return when(item.itemId) {
+            R.id.app_bar_search -> {
+                Toast.makeText(applicationContext, "Clicou Busca", Toast.LENGTH_SHORT).show()
+                true
 
-        when(itemview) {
-
-            R.id.app_bar_search -> Toast.makeText(applicationContext, "Clicou Busca", Toast.LENGTH_SHORT).show()
             }
-        return false
+            else -> super.onOptionsItemSelected(item)
+            }
+
         }
 
 
+
+ */
     private fun replaceFragment(fragment: Fragment){
         if(fragment!=null){
             val transaction = supportFragmentManager.beginTransaction()

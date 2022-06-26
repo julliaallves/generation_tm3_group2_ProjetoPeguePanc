@@ -7,6 +7,25 @@
     android:background="#F0E4D1"
     tools:context=".NovoProdutoFragment">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00541A"
+            app:titleTextColor="@color/white"
+            app:title="Pegue&amp;Panc - Novo Produto"
+
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
     <Button
         android:id="@+id/buttonCadastrar"
         android:layout_width="match_parent"
@@ -20,19 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <TextView
-        android:id="@+id/textNovoProduto"
-        android:layout_width="227dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="8dp"
-        android:text="Novo Produto"
-        android:textColor="#000000"
-        android:textSize="35dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.086"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/imageFundo"
@@ -42,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textNovoProduto"
+        app:layout_constraintTop_toBottomOf="@id/coordinatorLayout2"
         app:srcCompat="@drawable/fundoimagem" />
 
     <ImageView

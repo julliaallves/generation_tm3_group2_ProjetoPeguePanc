@@ -2,10 +2,7 @@ package com.generation.projetopanc.api
 
 import com.generation.projetopanc.model.Categoria
 import com.generation.projetopanc.model.Produtos
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -25,6 +22,9 @@ interface ApiService {
     suspend fun updateProdutos(
         @Body produtos: Produtos
     ): retrofit2.Response<Produtos>
+
+    @GET("produtos/nome-marca/{nomeMarca}")
+    suspend fun searchDatabase(@Path("nomeMarca") nomeMarca: String): retrofit2.Response<List<Produtos>>
 
 
 

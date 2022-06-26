@@ -9,12 +9,10 @@ import com.generation.projetopanc.databinding.CardcatalogoLayoutBinding
 import com.generation.projetopanc.model.Produtos
 
 class ProdutosAdapter (
-    val produtosClickListener: ProdutosClickListener,
-    val mainViewModel: MainViewModel
+    val produtosClickListener: ProdutosClickListener
         ): RecyclerView.Adapter<ProdutosAdapter.ProdutosViewHolder> (){
 
     private var listProdutos = emptyList<Produtos>()
-
 
     class ProdutosViewHolder (val binding: CardcatalogoLayoutBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -114,7 +112,5 @@ class ProdutosAdapter (
         listProdutos = list.sortedByDescending { it.id }
         notifyDataSetChanged()
     }
-
-
 
 }

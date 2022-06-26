@@ -19,6 +19,7 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
 
     private  val repository: Repository
+
 ) : ViewModel() {
 
     var produtoSelecionado: Produtos? = null
@@ -28,6 +29,12 @@ class MainViewModel @Inject constructor(
 
     val myCategoriaResponse: LiveData<Response<List<Categoria>>> =
         _myCategoriaResponse
+
+    private val _mySearchResponse =
+        MutableLiveData<Response<List<Produtos>>>()
+
+    val mySearchResponse: LiveData<Response<List<Produtos>>> =
+        _mySearchResponse
 
     private val _myprodutosResponse =
         MutableLiveData<Response<List<Produtos>>>()
@@ -84,5 +91,33 @@ class MainViewModel @Inject constructor(
             }
         }
     }
+
+    fun searchDatabase(search: String){
+        viewModelScope.launch {
+            try {
+                val response = repository.searchDatabase(search)
+                _mySearchResponse.value = response
+            }catch (e:Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
+    /*fun searchDatabase(search: String): {
+        viewModelScope.launch {
+            try {
+                val response = repository.searchDatabase(search)
+                _mySearchResponse.value = response
+                //listProdutos()
+
+            } catch (e: Exception) {
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
+
+
+     */
 
 }

@@ -22,4 +22,9 @@ class Repository {
     suspend fun updateProdutos(produtos: Produtos): Response<Produtos>{
         return RetrofitObject.api.updateProdutos(produtos)
     }
+
+    suspend fun searchDatabase(nomeMarca: String): Response<List<Produtos>>{
+        return RetrofitObject.api.searchDatabase(nomeMarca)
+
+    }
 }
