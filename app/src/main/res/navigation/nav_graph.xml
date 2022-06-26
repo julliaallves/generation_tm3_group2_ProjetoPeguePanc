@@ -6,10 +6,10 @@
     app:startDestination="@id/catalogo">
 
     <fragment
-        android:id="@+id/homepage"
+        android:id="@+id/publicacoes"
         android:name="com.generation.projetopanc.PublicacoesFragment"
-        android:label="fragment_homepage"
-        tools:layout="@layout/fragment_homepage" >
+        android:label="fragment_publicacoes"
+        tools:layout="@layout/fragment_publicacoes">
         <action
             android:id="@+id/action_homepage_to_carrinho"
             app:destination="@id/carrinho"
