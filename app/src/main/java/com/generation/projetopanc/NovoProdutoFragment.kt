@@ -41,7 +41,6 @@ class NovoProdutoFragment : Fragment() {
 
         binding.buttonCadastrar.setOnClickListener {
             inserirNoBanco()
-            binding.buttonCadastrar.setText("CADASTRAR")
 
         }
         return binding.root
@@ -103,6 +102,7 @@ class NovoProdutoFragment : Fragment() {
                 salvar = "Produto Atualizado"
                 val produto = Produtos(produtoSelecionado?.id!!, nome, descricao, imagem, quantidade, valor, categoria)
                 mainViewModel.updateProdutos(produto)
+                produtoSelecionado = null
             }else{
                 salvar = "Produto Cadastrado"
                 val produto = Produtos(0,nome, descricao, imagem, quantidade, valor, categoria)
@@ -124,13 +124,12 @@ class NovoProdutoFragment : Fragment() {
 
     private fun carregarDados(){
         produtoSelecionado = mainViewModel.produtoSelecionado
-        binding.buttonCadastrar.setText("CADASTRAR")
         if(produtoSelecionado != null){
             binding.editTextNomeProd.setText(produtoSelecionado?.nomeMarca)
             binding.editTextDescricao.setText(produtoSelecionado?.descricao)
             binding.editTextValorProd.setText(produtoSelecionado?.valor)
             binding.editTextQuantidade.setText(produtoSelecionado?.quantidade)
-            binding.buttonCadastrar.setText("ATUALIZAR")
+            mainViewModel.produtoSelecionado = null
             //config de spinner de categorias da api
         }
     }

@@ -77,12 +77,15 @@ class ProdutosAdapter (
             else ->{holder.binding.textImagem.setImageResource(R.drawable.imagem)}
         }
 
-        if(produtos.quantidade.toInt() == 1){
-            holder.binding.textqtd2.setText(" disponível)")
-        }else if(produtos.quantidade.toInt() == 0){
-            holder.binding.textqtd2.setText(" indisponível)")
-            //holder.binding.textqtd2.setTextColor()
-            holder.binding.textqtd2.setText(" disponíveis)")
+        when(produtos.quantidade.toInt()){
+            1 -> holder.binding.textqtd2.setText(" disponível)")
+
+            0 -> {
+                holder.binding.textqtd2.setText(" indisponível)")
+                //holder.binding.textqtd2.setTextColor()
+            }
+
+            else -> holder.binding.textqtd2.setText(" disponíveis)")
         }
 
         when(produtos.categoria.descricao){

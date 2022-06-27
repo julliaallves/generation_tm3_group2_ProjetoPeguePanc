@@ -30,7 +30,8 @@
             app:icon="@drawable/ic_baseline_settings_24"
             app:iconTint="#888585"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="#888585"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/deleteButton"
@@ -42,7 +43,8 @@
             app:iconSize="20dp"
             app:iconTint="#888585"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="#888585"/>
 
 
         <ImageView

@@ -63,6 +63,7 @@ class CatalogoFragment : Fragment(), ProdutosClickListener, SearchView.OnQueryTe
     override fun onProdutosClickListener(produto: Produtos) {
         mainviewmodel.produtoSelecionado = produto
         findNavController().navigate(R.id.action_catalogo_to_novoProduto)
+
     }
 
     override fun onProdutosCLickListenerOpenPdp() {
@@ -83,20 +84,13 @@ class CatalogoFragment : Fragment(), ProdutosClickListener, SearchView.OnQueryTe
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId) {
-
-            R.id.app_bar_search -> {
-
-                //var resposta = mainviewmodel.mySearchResponse.toString()
-                //Toast.makeText(requireContext(),resposta,Toast.LENGTH_SHORT).show()
-
-                true
+        return true
 
             }
-            else -> super.onOptionsItemSelected(item)
-        }
+            //else -> super.onOptionsItemSelected(item)
 
-    }
+
+
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         if(query != null && query != ""){
