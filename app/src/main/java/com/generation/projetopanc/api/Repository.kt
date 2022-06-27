@@ -31,4 +31,5 @@ class Repository {
     suspend fun deleteProdutos(id: Long): Response<Produtos>{
         return RetrofitObject.api.deleteProdutos(id)
     }
+
 }
