@@ -37,7 +37,7 @@ class ProdutosAdapter (
 
         holder.itemView.setOnClickListener{
            //produtosClickListener.onProdutosClickListener(produtos)
-            produtosClickListener.onProdutosCLickListenerOpenPdp()
+            produtosClickListener.onProdutosCLickListenerOpenPdp(produtos)
        }
 
 

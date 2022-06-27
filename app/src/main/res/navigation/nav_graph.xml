@@ -60,5 +60,10 @@
             app:destination="@id/carrinho"
             app:popUpTo="@id/carrinho"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_paginaDeDescricaoDoProdutoFragment_to_catalogo"
+            app:destination="@id/catalogo"
+            app:popUpTo="@id/catalogo"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
