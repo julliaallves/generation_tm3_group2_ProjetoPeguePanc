@@ -14,7 +14,7 @@ import com.generation.projetopanc.adapter.ProdutosAdapter
 import com.generation.projetopanc.adapter.ProdutosClickListener
 import com.generation.projetopanc.databinding.FragmentCatalogoBinding
 import com.generation.projetopanc.model.Produtos
-import kotlinx.android.synthetic.main.fragment_catalogo.*
+
 import java.util.*
 
 
@@ -23,7 +23,9 @@ class CatalogoFragment : Fragment(), ProdutosClickListener, SearchView.OnQueryTe
     private lateinit var binding: FragmentCatalogoBinding
     private val mainviewmodel : MainViewModel by activityViewModels()
     //Coloquei o adapter iniciando bylazy
-    private val adapter: ProdutosAdapter by lazy { ProdutosAdapter(this) }
+    private val adapter: ProdutosAdapter by lazy {
+        ProdutosAdapter(this, mainviewmodel, requireContext())
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
