@@ -1,5 +1,7 @@
 package com.generation.projetopanc.adapter
 
+import android.app.AlertDialog
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,7 +11,9 @@ import com.generation.projetopanc.databinding.CardcatalogoLayoutBinding
 import com.generation.projetopanc.model.Produtos
 
 class ProdutosAdapter (
-    val produtosClickListener: ProdutosClickListener
+    val produtosClickListener: ProdutosClickListener,
+    val mainViewModel: MainViewModel,
+    val context: Context
         ): RecyclerView.Adapter<ProdutosAdapter.ProdutosViewHolder> (){
 
     private var listProdutos = emptyList<Produtos>()
@@ -101,6 +105,9 @@ class ProdutosAdapter (
         //holder.binding.textImagem.setImageResource()
 
 
+        holder.binding.deleteButton.setOnClickListener{
+            showAlertDialog(produtos.id)
+        }
 
 
     }
@@ -113,6 +120,18 @@ class ProdutosAdapter (
 
         listProdutos = list.sortedByDescending { it.id }
         notifyDataSetChanged()
+    }
+
+    private fun showAlertDialog(id: Long){
+        AlertDialog.Builder(context)
+            .setTitle("Excluir")
+            .setMessage("Deseja excluir?")
+            .setPositiveButton("Sim"){
+                _,_-> mainViewModel.deleteProdutos(id)
+            }
+            .setNegativeButton("Não"){
+                _,_ ->
+            }.show()
     }
 
 }
