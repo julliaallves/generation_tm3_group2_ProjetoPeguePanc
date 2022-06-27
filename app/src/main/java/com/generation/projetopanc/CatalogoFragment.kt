@@ -66,7 +66,8 @@ class CatalogoFragment : Fragment(), ProdutosClickListener, SearchView.OnQueryTe
 
     }
 
-    override fun onProdutosCLickListenerOpenPdp() {
+    override fun onProdutosCLickListenerOpenPdp(produto: Produtos) {
+        mainviewmodel.produtoSelecionado = produto
         findNavController().navigate(R.id.action_catalogo_to_paginaDeDescricaoDoProdutoFragment)
     }
 

@@ -5,6 +5,6 @@ import com.generation.projetopanc.model.Produtos
 interface ProdutosClickListener {
 
     fun onProdutosClickListener(produto: Produtos)
-    fun onProdutosCLickListenerOpenPdp()
+    fun onProdutosCLickListenerOpenPdp(produto: Produtos)
 
 }

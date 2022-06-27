@@ -27,18 +27,214 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/voltarButton"
         style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="5dp"
         android:padding="2dp"
-        android:text="Voltar"
         android:textColor="#888585"
-        android:textSize="20dp"
-        app:icon="@drawable/ic_baseline_settings_24"
-        app:iconSize="18dp"
+        app:icon="@drawable/ic_baseline_arrow_back_24"
+        app:iconSize="35dp"
         app:iconTint="#888585"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout2" />
+
+    <ImageView
+        android:id="@+id/imagemProduto"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="25dp"
+        android:cropToPadding="true"
+        android:scrollbarSize="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout2"
+        app:srcCompat="@drawable/taioba" />
+
+    <TextView
+        android:id="@+id/textNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagemProduto"
+        tools:text="Nome do Produto" />
+
+    <TextView
+        android:id="@+id/textVendidoPor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Vendido e entregue por:"
+        android:textColor="#888585"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textNome" />
+
+    <TextView
+        android:id="@+id/textVendedor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text=" Nome do Vendedor"
+        android:textColor="#CE7D00"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textVendidoPor"
+        app:layout_constraintTop_toBottomOf="@+id/textNome" />
+
+    <TextView
+        android:id="@+id/textquantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="28dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/minusButton"
+        tools:text="1" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/plusButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:padding="2dp"
+        app:icon="@drawable/ic_add"
+        app:iconSize="25dp"
+        app:iconTint="@color/purple_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textquantidade" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/minusButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="20dp"
+        android:padding="2dp"
+        app:icon="@drawable/ic_menos"
+        app:iconSize="25dp"
+        app:iconTint="#CE7D00"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="407dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="20dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/minusButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textRS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="R$ "
+        android:textColor="@color/purple_700"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVendidoPor" />
+
+    <TextView
+        android:id="@+id/textValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/purple_700"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textRS"
+        app:layout_constraintTop_toBottomOf="@+id/textVendidoPor"
+        tools:text="Preço:" />
+
+    <Button
+        android:id="@+id/buttonComprar"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="#CE7D00"
+        android:text="Adicionar ao carrinho"
+        android:textColor="#F0E4D1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/plusButton" />
+
+    <TextView
+        android:id="@+id/textDescricao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:textColor="#888585"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textValor"
+        app:layout_constraintTop_toBottomOf="@+id/textVendidoPor"
+        tools:text="Descrição:" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/favoriteButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="38dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:padding="2dp"
+        app:icon="@drawable/ic_doacao"
+        app:iconSize="32dp"
+        app:iconTint="#CE7D00"
+        app:layout_constraintEnd_toStartOf="@+id/compartilharButton"
+        app:layout_constraintTop_toBottomOf="@+id/textVendidoPor" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/compartilharButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="38dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:padding="2dp"
+        app:icon="@drawable/share"
+        app:iconSize="32dp"
+        app:iconTint="#CE7D00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVendidoPor" />
+
+    <TextView
+        android:id="@+id/textCuriosidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textValor"
+        tools:text="Curiosidade:" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
