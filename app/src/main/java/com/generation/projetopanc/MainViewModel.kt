@@ -12,8 +12,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
-import java.lang.Exception
 import javax.inject.Inject
+import kotlin.Exception
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
@@ -103,6 +103,30 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    fun deleteProdutos(id: Long){
+        viewModelScope.launch {
+            try{
+                repository.deleteProdutos(id)
+                listProdutos()
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
+}
+    /*fun delay(time:Long){
+    viewModelScope.launch {
+        try {
+            delay(time)
+
+        } catch (e: Exception) {
+            Log.d("Erro", e.message.toString())
+        }
+    }
+
+     */
+
     /*fun searchDatabase(search: String): {
         viewModelScope.launch {
             try {
@@ -120,4 +144,3 @@ class MainViewModel @Inject constructor(
 
      */
 
-}

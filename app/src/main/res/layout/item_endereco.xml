@@ -51,7 +51,7 @@
                 <ImageView
                     android:padding="5dp"
                     app:tint="#CE7D00"
-                    android:src="@drawable/ic_add"
+                    android:src="@drawable/ic_add2"
                     android:layout_width="35dp"
                     android:layout_height="35dp"/>
                 <TextView
