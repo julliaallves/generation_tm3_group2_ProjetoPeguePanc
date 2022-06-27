@@ -89,7 +89,7 @@ class NovoProdutoFragment : Fragment() {
 
     private fun inserirNoBanco() {
         val nome = binding.editTextNomeProd.text.toString()
-        val imagem = binding.imageInserir.toString()
+        val imagem = binding.editTextLinkImagem.toString() //--> substituir binding.imagemInserir por uma caixa de texto para receber o link da imagem, no layout.
         val valor = binding.editTextValorProd.text.toString()
         val descricao = binding.editTextDescricao.text.toString()
         val quantidade = binding.editTextQuantidade.text.toString()

@@ -26,10 +26,10 @@ class PublicacoesFragment : Fragment() {
             Publicacoes(
                 1,
                 "Acabei de plantar uma muda de beldroegão que troquei por umas folhas de" +
-                        " taioba nesse site!",
+                        " taioba nesse aplicativo!",
                 "Renato dos Santos",
-                1,
-                3
+                3,
+                1
 
                 ), Publicacoes(
                 2,
@@ -79,8 +79,8 @@ class PublicacoesFragment : Fragment() {
                         "adicione o suco do limão, desligue o fogo e deixe esfriar. Coloque em" +
                         " vidros limpos e com tampa e guarde na geladeira.",
                 "Aires Mariga",
-                1,
-                3
+                3,
+                1
             ), Publicacoes(
                 6,
                 "Olá, essa é minha primeira publicação no aplicativo! Gostaria de falar um " +

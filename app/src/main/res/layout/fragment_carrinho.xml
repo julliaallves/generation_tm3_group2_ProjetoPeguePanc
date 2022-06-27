@@ -20,7 +20,7 @@ xmlns:tools="http://schemas.android.com/tools"
         android:layout_height="wrap_content"
         android:background="#00541A"
         app:titleTextColor="@color/white"
-        app:title="Pegue&amp;Panc - Carrinho"
+        app:title="Carrinho"
         />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
@@ -28,11 +28,9 @@ xmlns:tools="http://schemas.android.com/tools"
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerCarrinho"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="60dp"
+        android:layout_height="wrap_content"
         android:background="#F0E4D1"
         android:paddingTop="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/textTextTotal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

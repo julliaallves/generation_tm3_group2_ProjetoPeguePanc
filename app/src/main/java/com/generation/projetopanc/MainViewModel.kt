@@ -103,6 +103,30 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    fun deleteProdutos(id: Long){
+        viewModelScope.launch {
+            try{
+                repository.deleteProdutos(id)
+                listProdutos()
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
+}
+    /*fun delay(time:Long){
+    viewModelScope.launch {
+        try {
+            delay(time)
+
+        } catch (e: Exception) {
+            Log.d("Erro", e.message.toString())
+        }
+    }
+
+     */
+
     /*fun searchDatabase(search: String): {
         viewModelScope.launch {
             try {
@@ -120,15 +144,3 @@ class MainViewModel @Inject constructor(
 
      */
 
-    fun deleteProdutos(id: Long){
-        viewModelScope.launch {
-            try{
-                repository.deleteProdutos(id)
-                listProdutos()
-            }catch (e: Exception){
-                Log.d("Erro", e.message.toString())
-            }
-        }
-    }
-
-}

@@ -29,7 +29,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="55dp"
                     android:layout_marginTop="7dp"
-                    android:text="Pegue&amp;Panc - Perfil"
+                    android:text="Perfil"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textColor="@color/white"
                     android:textSize="20sp"
@@ -45,7 +45,6 @@
                     android:layout_marginStart="6dp"
                     android:layout_marginTop="5dp"
                     android:padding="2dp"
-                    android:textColor="@color/white"
                     app:icon="@drawable/ic_baseline_arrow_back_24"
                     app:iconSize="35dp"
                     app:iconTint="@color/white" />
