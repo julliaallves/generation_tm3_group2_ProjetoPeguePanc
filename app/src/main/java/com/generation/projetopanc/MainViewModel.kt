@@ -102,6 +102,18 @@ class MainViewModel @Inject constructor(
             }
         }
     }
+    /*fun delay(time:Long){
+    viewModelScope.launch {
+        try {
+            delay(time)
+
+        } catch (e: Exception) {
+            Log.d("Erro", e.message.toString())
+        }
+    }
+
+     */
+}
 
     /*fun searchDatabase(search: String): {
         viewModelScope.launch {
@@ -120,4 +132,3 @@ class MainViewModel @Inject constructor(
 
      */
 
-}
