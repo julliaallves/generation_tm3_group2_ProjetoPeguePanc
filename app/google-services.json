@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "639607616628",
+    "project_id": "projetopeguepanc",
+    "storage_bucket": "projetopeguepanc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639607616628:android:193ef91c39ca10a0550d21",
+        "android_client_info": {
+          "package_name": "com.generation.projetopanc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "639607616628-cbmh0itns7s1i962mobqqt6nul9opb58.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0ckHHvDMenxl9rHt-qgarZPal8m2EPwI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "639607616628-cbmh0itns7s1i962mobqqt6nul9opb58.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
