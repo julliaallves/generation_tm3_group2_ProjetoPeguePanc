@@ -27,4 +27,8 @@ class Repository {
         return RetrofitObject.api.searchDatabase(nomeMarca)
 
     }
+
+    suspend fun deleteProdutos(id: Long): Response<Produtos>{
+        return RetrofitObject.api.deleteProdutos(id)
+    }
 }
