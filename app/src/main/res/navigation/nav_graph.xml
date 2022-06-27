@@ -42,12 +42,12 @@
     </fragment>
     <fragment
         android:id="@+id/carrinho"
-        android:name="com.generation.projetopanc.carrinho"
+        android:name="com.generation.projetopanc.CarrinhoFragment"
         android:label="fragment_carrinho"
         tools:layout="@layout/fragment_carrinho" />
     <fragment
         android:id="@+id/perfil"
-        android:name="com.generation.projetopanc.perfil"
+        android:name="com.generation.projetopanc.PerfilFragment"
         android:label="fragment_perfil"
         tools:layout="@layout/fragment_perfil" />
     <fragment

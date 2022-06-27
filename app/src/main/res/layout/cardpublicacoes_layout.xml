@@ -156,9 +156,10 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/comentarButton"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="130dp"
+            android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
             android:backgroundTint="#CE7D00"
             android:text="Comentar"
             android:textColor="#F0E4D1"
@@ -167,12 +168,13 @@
             app:iconSize="20dp"
             app:iconTint="#F0E4D1"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/shareButton"
             app:layout_constraintStart_toEndOf="@+id/likeButton" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/likeButton"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="130dp"
+            android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="11dp"
             android:backgroundTint="#CE7D00"
@@ -190,9 +192,8 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/shareButton"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="130dp"
+            android:layout_width="0dp"
             android:layout_height="45dp"
-            android:layout_marginStart="1dp"
             android:layout_marginEnd="11dp"
             android:backgroundTint="#CE7D00"
             android:text="Compartilhar"
@@ -202,9 +203,7 @@
             app:iconSize="20dp"
             app:iconTint="#F0E4D1"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/comentarButton" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <View
             android:id="@+id/divider"
