@@ -25,5 +25,72 @@ xmlns:tools="http://schemas.android.com/tools"
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCarrinho"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textTotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout2"
+        app:layout_constraintVertical_bias="0.0"
+        android:background="#F0E4D1"/>
+
+    <TextView
+    android:id="@+id/textTextTotal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:layout_marginBottom="20dp"
+    android:text="Total"
+    android:textColor="@color/black"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toTopOf="@+id/buttonComprar"
+    app:layout_constraintStart_toStartOf="@+id/recyclerCarrinho" />
+
+    <TextView
+        android:id="@+id/textRS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="20dp"
+        android:text="R$"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonComprar"
+        app:layout_constraintEnd_toStartOf="@+id/textTotal" />
+
+    <TextView
+        android:id="@+id/textTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="69,69"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonComprar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonComprar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="#CE7D00"
+        android:text="Comprar"
+        android:textColor="#F0E4D1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
