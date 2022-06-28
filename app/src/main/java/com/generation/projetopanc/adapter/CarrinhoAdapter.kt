@@ -97,7 +97,7 @@ class CarrinhoAdapter(
         setList(list)
         var total:Double = 0.0
         listCarrinho.forEach{
-            total += it.valor.toDouble() * it.valor.toDouble()
+            total += it.valor.toDouble() * it.quantidade.toDouble()
         }
         carrinhoViewModel.total = total
         total1 = total
