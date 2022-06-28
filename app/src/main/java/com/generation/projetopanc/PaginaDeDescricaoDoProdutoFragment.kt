@@ -7,15 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.generation.projetopanc.databinding.FragmentCatalogoBinding
+import com.generation.projetopanc.data.db.entity.Carrinho
 import com.generation.projetopanc.databinding.FragmentPaginaDeDescricaoDoProdutoBinding
 import com.generation.projetopanc.model.Produtos
-import kotlinx.coroutines.delay
 
 class PaginaDeDescricaoDoProdutoFragment : Fragment() {
 
     private lateinit var binding: FragmentPaginaDeDescricaoDoProdutoBinding
+    private lateinit var carrinhoViewModel: CarrinhoViewModel
     private val mainViewModel: MainViewModel by activityViewModels()
     private var produtoSelecionado: Produtos? = null
     private var contadorProdutos: Int = 1
@@ -27,14 +28,20 @@ class PaginaDeDescricaoDoProdutoFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentPaginaDeDescricaoDoProdutoBinding.inflate(layoutInflater,container,false)
 
+        carrinhoViewModel = ViewModelProvider(this).get(CarrinhoViewModel::class.java)
+
         carregarDados()
+
+
 
         binding.voltarButton.setOnClickListener{
             findNavController().navigate(R.id.action_paginaDeDescricaoDoProdutoFragment_to_catalogo)
         }
 
         binding.buttonComprar.setOnClickListener{
-            findNavController().navigate(R.id.action_paginaDeDescricaoDoProdutoFragment_to_carrinho)
+            if(produtoSelecionado?.quantidade?.toInt() == 0){
+                Toast.makeText(requireContext(),"Produto Indisponível", Toast.LENGTH_SHORT).show()
+            }else inserirNoBanco()
         }
         when(produtoSelecionado?.nomeMarca){
 
@@ -111,5 +118,34 @@ class PaginaDeDescricaoDoProdutoFragment : Fragment() {
 
         }
     }
+
+    fun verificarCampos(
+            nomeMarca: String,
+            quantidade: Int,
+            descricao: String,
+            valor: String
+        ): Boolean {
+            return !(nomeMarca == "" || quantidade == 0 || descricao =="" || valor == "")
+    }
+
+    fun inserirNoBanco(){
+
+        val nomeMarca = produtoSelecionado?.nomeMarca.toString()
+        val quantidade = contadorProdutos
+        val descricao = produtoSelecionado?.descricao.toString()
+        val valor = produtoSelecionado?.valor.toString()
+
+
+        if(verificarCampos(nomeMarca, quantidade, descricao, valor)){
+            var produtoCarrinho = Carrinho(0, nomeMarca, quantidade, descricao, valor)
+            carrinhoViewModel.addCarrinho(produtoCarrinho)
+            Toast.makeText(context, "Produto Adicionado!", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_paginaDeDescricaoDoProdutoFragment_to_carrinho)
+        }else{
+            Toast.makeText(context, "Algo deu errado...", Toast.LENGTH_SHORT).show()
+        }
+
+    }
+
 
 }

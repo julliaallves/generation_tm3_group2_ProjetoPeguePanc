@@ -79,6 +79,7 @@ class ProdutosAdapter (
 
 
             else ->{holder.binding.textImagem.setImageResource(R.drawable.imagem)}
+            //no lugar disso talvez por o glider.
         }
 
         when(produtos.quantidade.toInt()){
