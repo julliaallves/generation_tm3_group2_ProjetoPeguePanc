@@ -15,14 +15,16 @@ class CarrinhoViewModel(application: Application) : AndroidViewModel(application
     val carrinhoRepository: CarrinhoRepository
     val getAllCarrinho: LiveData<List<Carrinho>>
 
+
     init {
         val carrinhoDao = CarrinhoDatabase.getDatabase(application).carrinhoDao()
         carrinhoRepository = CarrinhoRepository(carrinhoDao)
         getAllCarrinho = carrinhoRepository.getAllCarrinho
 
+
     }
 
-
+    var total = 0.0
 
     fun addCarrinho(carrinho: Carrinho){
         viewModelScope.launch(Dispatchers.IO) {
@@ -45,4 +47,6 @@ class CarrinhoViewModel(application: Application) : AndroidViewModel(application
             carrinhoRepository.deleteAllCarrinho()
         }
     }
+
+
 }

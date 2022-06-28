@@ -39,7 +39,9 @@ class PaginaDeDescricaoDoProdutoFragment : Fragment() {
         }
 
         binding.buttonComprar.setOnClickListener{
-            inserirNoBanco()
+            if(produtoSelecionado?.quantidade?.toInt() == 0){
+                Toast.makeText(requireContext(),"Produto Indisponível", Toast.LENGTH_SHORT).show()
+            }else inserirNoBanco()
         }
         when(produtoSelecionado?.nomeMarca){
 
@@ -132,6 +134,7 @@ class PaginaDeDescricaoDoProdutoFragment : Fragment() {
         val quantidade = contadorProdutos
         val descricao = produtoSelecionado?.descricao.toString()
         val valor = produtoSelecionado?.valor.toString()
+
 
         if(verificarCampos(nomeMarca, quantidade, descricao, valor)){
             var produtoCarrinho = Carrinho(0, nomeMarca, quantidade, descricao, valor)
