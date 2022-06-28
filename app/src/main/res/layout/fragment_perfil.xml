@@ -47,7 +47,8 @@
                     android:padding="2dp"
                     app:icon="@drawable/ic_baseline_arrow_back_24"
                     app:iconSize="35dp"
-                    app:iconTint="@color/white" />
+                    app:iconTint="@color/white"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <ImageView
                     android:layout_width="45dp"
@@ -115,6 +116,7 @@
             <include layout="@layout/item_endereco"/>
             <include layout="@layout/item_telefone"/>
             <include layout="@layout/item_email"/>
+            <include layout="@layout/activity_sign_out"/>
 
         </LinearLayout>
 
