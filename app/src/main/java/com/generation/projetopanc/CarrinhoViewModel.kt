@@ -30,6 +30,19 @@ class CarrinhoViewModel(application: Application) : AndroidViewModel(application
         }
     }
 
-
-
+    fun updateCarrinho(carrinho: Carrinho){
+        viewModelScope.launch(Dispatchers.IO){
+            carrinhoRepository.updateCarrinho(carrinho)
+        }
+    }
+    fun deleteCarrinho(id: Long){
+        viewModelScope.launch(Dispatchers.IO){
+            carrinhoRepository.deleteCarrinho(id)
+        }
+    }
+    fun deleteAllCarrinho(){
+        viewModelScope.launch(Dispatchers.IO){
+            carrinhoRepository.deleteAllCarrinho()
+        }
+    }
 }

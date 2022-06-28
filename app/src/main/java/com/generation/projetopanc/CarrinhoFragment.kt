@@ -30,7 +30,7 @@ class CarrinhoFragment : Fragment() {
         carrinhoViewModel = ViewModelProvider(this).get(CarrinhoViewModel::class.java)
 
 
-        val adapter = CarrinhoAdapter()
+        val adapter = CarrinhoAdapter(carrinhoViewModel)
         binding.recyclerCarrinho.layoutManager = LinearLayoutManager(context)
         binding.recyclerCarrinho.adapter = adapter
         binding.recyclerCarrinho.setHasFixedSize(true)
@@ -39,6 +39,36 @@ class CarrinhoFragment : Fragment() {
             response -> adapter.setList(response)
         }
 
+        /*binding.plusButton.setOnClickListener{
+            if(produtoSelecionado?.quantidade?.toInt() == 0){
+                Toast.makeText(requireContext(),"Produto Indisponível", Toast.LENGTH_SHORT).show()
+
+            }else if(contadorProdutos < produtoSelecionado?.quantidade?.toInt()!!){
+                contadorProdutos++
+                binding.textquantidade.setText("$contadorProdutos")
+
+            }
+        }
+        binding.minusButton.setOnClickListener{
+
+            if(produtoSelecionado?.quantidade?.toInt() == 0){
+                Toast.makeText(requireContext(),"Produto Indisponível", Toast.LENGTH_SHORT).show()
+
+            }else if(contadorProdutos <= 1){
+                //mainViewModel.delay(500)
+                findNavController().navigate(R.id.action_paginaDeDescricaoDoProdutoFragment_to_catalogo)
+
+
+            }else{
+                contadorProdutos--
+                binding.textquantidade.setText("$contadorProdutos")
+            }
+        }
+
+         */
+        binding.buttonAdicionarOutroItem.setOnClickListener {
+            findNavController().navigate(R.id.action_carrinho_to_catalogo)
+        }
         return binding.root
 
     }
