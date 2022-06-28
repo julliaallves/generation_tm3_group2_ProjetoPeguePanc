@@ -19,7 +19,6 @@ class NovaPublicaoFragment : Fragment() {
             binding = FragmentPublicarBinding.inflate(layoutInflater, container, false)
             binding.publisalvarButton.setOnClickListener {
                 //  findNavController()
-//tem que meter o nav graph quando a gente implementar os card e os caralho
             }
             return binding.root
 

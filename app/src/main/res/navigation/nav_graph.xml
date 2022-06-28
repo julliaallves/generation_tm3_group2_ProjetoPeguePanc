@@ -44,7 +44,13 @@
         android:id="@+id/carrinho"
         android:name="com.generation.projetopanc.CarrinhoFragment"
         android:label="fragment_carrinho"
-        tools:layout="@layout/fragment_carrinho" />
+        tools:layout="@layout/fragment_carrinho" >
+        <action
+            android:id="@+id/action_carrinho_to_catalogo"
+            app:destination="@id/catalogo"
+            app:popUpTo="@id/catalogo"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/perfil"
         android:name="com.generation.projetopanc.PerfilFragment"

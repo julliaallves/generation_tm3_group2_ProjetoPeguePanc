@@ -28,13 +28,16 @@ xmlns:tools="http://schemas.android.com/tools"
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerCarrinho"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="180dp"
         android:background="#F0E4D1"
         android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textTextTotal"
@@ -68,7 +71,7 @@ xmlns:tools="http://schemas.android.com/tools"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:text="69,69"
+        android:text="12,99"
         android:textColor="@color/purple_700"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -95,9 +98,10 @@ xmlns:tools="http://schemas.android.com/tools"
         android:textColor="#CE7D00"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerCarrinho"
-        app:rippleColor="#888585"/>
+        app:rippleColor="#888585" />
 
     <Button
         android:id="@+id/buttonComprar"
